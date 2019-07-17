@@ -39,7 +39,6 @@ public class EMI_Calculator {
 	    
 	   WebElement amount=driver.findElement(By.xpath("//*[@id=\"emiamount\"]/p/span"));
 	   String s=amount.getText();
-	 //assert.assertEquals(s,"92,439");
 		  
 	   System.out.println(s);
 	 
