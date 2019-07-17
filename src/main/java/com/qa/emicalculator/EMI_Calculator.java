@@ -11,16 +11,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class EMI_Calculator {
+	WebDriver driver;
 	
 	@Test
 	public void emicalc()
 	{
 		
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Vega\\Downloads\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		 driver = new ChromeDriver();
 	    
 	    driver.get("https://emicalculator.net/");
 	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -42,6 +44,12 @@ public class EMI_Calculator {
 	   System.out.println(s);
 	 
 	
-	}
+	}     
 
+	@AfterMethod
+	public void teardown() {
+		driver.close();
+		
+	}
+	
 }
